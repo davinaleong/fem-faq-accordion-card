@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Frontend Mentor | FAQ Accordion Card</title>
@@ -14,6 +13,13 @@
       href="./images/favicon-32x32.png"
     />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="./styles/reset.css" />
     <link rel="stylesheet" href="./styles/main.css" />
 
@@ -23,13 +29,49 @@
         text-align: center;
       }
       .attribution a {
-        color: hsl(228, 45%, 44%);
+        color: hsl(228, 45%, 84%);
       }
     </style>
 
     <script defer src="./scripts/main.js"></script>
   </head>
-  <body>
+  <body class="p-500">
+    <main
+      class="card-grid | text-neutral-900 bg-grey-100 mb-600 pl-600 pb-600 pr-600 br-200 bs-400"
+    >
+      <h1 class="visually-hidden">FAQ Accordion Card</h1>
+
+      <h2 class="card-heading | fw-bold fs-700 mb-400">FAQ</h2>
+
+      <div class="accordion" data-accordion>
+        <div class="accordion-pane" data-open>
+          <div class="accordion-toggle">
+            <p class="accordion-title">How many team members can I invite?</p>
+            <img src="./images/icon-arrow-down.svg" class="accordion-arrow" />
+          </div>
+          <div class="accordion-content">
+            <p>
+              You can invite up to 2 additional users on the Free plan. There is
+              no limit on team members for the Premium plan.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-pane">
+          <div class="accordion-toggle">
+            <p class="accordion-title">How many team members can I invite?</p>
+            <img src="./images/icon-arrow-down.svg" class="accordion-arrow" />
+          </div>
+          <div class="accordion-content">
+            <p>
+              You can invite up to 2 additional users on the Free plan. There is
+              no limit on team members for the Premium plan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"

@@ -27,6 +27,7 @@
 
   --clr-danger-400: hsl(14, 88%, 65%);
 
+  --clr-neutral-100: hsl(240, 5%, 91%);
   --clr-neutral-400: hsl(240, 6%, 50%);
   --clr-neutral-900: hsl(237, 12%, 33%);
 
@@ -41,8 +42,8 @@
   --clr-grey-900: hsl(0, 0%, 10%);
   --clr-grey-1000: hsl(0, 0%, 0%);
 
-  --ff-primary: "Barlow Semi Condensed", Verdana, sans-serif;
-  --ff-secondary: "Barlow Semi Condensed", Arial, sans-serif;
+  --ff-primary: "Kumbh Sans", Verdana, sans-serif;
+  --ff-secondary: "Kumbh Sans", Arial, sans-serif;
   --ff-body: var(--ff-primary);
   --ff-heading: var(--ff-secondary);
 
@@ -88,11 +89,18 @@ body {
   font-size: var(--fs-base);
   font-family: var(--ff-body);
   font-weight: var(--fw-regular);
-  display: grid;
-  grid-template-rows: repeat(3, max-content);
   min-height: 100vh;
-  justify-content: center;
+  display: grid;
+  justify-items: center;
   align-items: center;
+  background-image: linear-gradient(
+    to bottom,
+    var(--clr-accent-400),
+    var(--clr-primary-400)
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 /* * {
@@ -187,12 +195,90 @@ a:where(:hover, :focus, :focus-visible) {
 }
 
 /** Content - Layout **/
-.main-grid {
-  max-width: 69.375em;
-  margin-inline: auto;
-  height: 100%;
+.card-grid {
   display: grid;
-  gap: var(--size-500);
+  margin-inline: auto;
+  position: relative;
+  isolation: isolate;
+  margin-top: 29vw;
+  padding-top: 32vw;
+  width: 100%;
+  max-width: 69.375em;
+}
+
+.card-grid::before {
+  content: "";
+  display: block;
+  background-image: url(./../images/bg-pattern-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  width: 63.2vw;
+  height: 27.7vw;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.card-grid::after {
+  content: "";
+  display: block;
+  background-image: url(./../images/illustration-woman-online-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  width: 63.2vw;
+  height: 48.5vw;
+  position: absolute;
+  top: -29vw;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.card-heading {
+  text-align: center;
+}
+
+.accordion-pane {
+  border-bottom: thin solid var(--clr-neutral-100);
+}
+
+.accordion-toggle {
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: auto 1em;
+  gap: var(--size-400);
+  align-items: center;
+  padding-top: var(--size-300);
+  padding-bottom: var(--size-200);
+}
+
+/* .accordion-title {
+  transition: font-weight 0.3s ease-in-out;
+} */
+
+.accordion-arrow {
+  transform-origin: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.accordion-content {
+  padding: var(--size-200) var(--size-700) var(--size-300) 0;
+  color: var(--clr-neutral-400);
+  display: none;
+}
+
+.accordion-pane[data-open] .accordion-title {
+  font-weight: var(--fw-bold);
+}
+
+.accordion-pane[data-open] .accordion-arrow {
+  transform: rotate(180deg);
+}
+
+.accordion-pane[data-open] .accordion-content {
+  display: block;
 }
 
 /** Content - End **/
@@ -211,7 +297,7 @@ a:where(:hover, :focus, :focus-visible) {
 }
 
 .bs-400 {
-  box-shadow: 0.3em 0.3em 0.5em 0 hsla(0, 0%, 0%, 0.2);
+  box-shadow: 0 0.5em 0.7em 0 hsla(0, 0%, 0%, 0.2);
 }
 
 /** Utility - Colours **/
@@ -230,6 +316,9 @@ a:where(:hover, :focus, :focus-visible) {
   color: var(--clr-danger-400);
 }
 
+.text-neutral-100 {
+  color: var(--clr-neutral-100);
+}
 .text-neutral-400 {
   color: var(--clr-neutral-400);
 }
@@ -284,6 +373,9 @@ a:where(:hover, :focus, :focus-visible) {
   background-color: var(--clr-danger-400);
 }
 
+.bg-neutral-100 {
+  background-color: var(--clr-neutral-100);
+}
 .bg-neutral-400 {
   background-color: var(--clr-neutral-400);
 }
