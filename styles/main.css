@@ -242,6 +242,9 @@ a:where(:hover, :focus, :focus-visible) {
 
 .accordion-pane {
   border-bottom: thin solid var(--clr-neutral-100);
+  max-height: 3em;
+  overflow: hidden;
+  transition: all 0.5s ease-out;
 }
 
 .accordion-toggle {
@@ -267,6 +270,10 @@ a:where(:hover, :focus, :focus-visible) {
   padding: var(--size-200) var(--size-700) var(--size-300) 0;
   color: var(--clr-neutral-400);
   display: none;
+}
+
+.accordion-pane[data-open] {
+  max-height: 100%;
 }
 
 .accordion-pane[data-open] .accordion-title {
