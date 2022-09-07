@@ -201,9 +201,9 @@ a:where(:hover, :focus, :focus-visible) {
   position: relative;
   isolation: isolate;
   margin-top: 29vw;
+  padding-left: var(--size-600);
   padding-top: 32vw;
   width: 100%;
-  max-width: 69.375em;
 }
 
 .card-grid::before {
@@ -240,6 +240,44 @@ a:where(:hover, :focus, :focus-visible) {
   text-align: center;
 }
 
+@media (min-width: 64em) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 0;
+    padding-left: var(--size-600);
+    padding-top: var(--size-600);
+    max-width: 57.5em;
+    min-height: 31.875em;
+    overflow: hidden;
+    align-items: center;
+  }
+
+  .card-grid::before {
+    background-image: url(./../images/bg-pattern-desktop.svg);
+    top: -15vw;
+    left: -5em ;
+    width: 60.375em;
+    height: 59.063em;
+  }
+
+  .card-grid::after {
+    background-image: url(./../images/illustration-woman-online-desktop.svg);
+    top: 5em;
+    left: -4.5em;
+    width: 29.5em;
+    height: 22.5em;
+    transform: none;
+  }
+
+  .card-heading {
+    text-align: left;
+  }
+
+  .main-content {
+    grid-column: 2;
+  }
+}
+
 .accordion-pane {
   border-bottom: thin solid var(--clr-neutral-100);
   max-height: 3em;
@@ -257,9 +295,13 @@ a:where(:hover, :focus, :focus-visible) {
   padding-bottom: var(--size-200);
 }
 
-/* .accordion-title {
-  transition: font-weight 0.3s ease-in-out;
-} */
+.accordion-title {
+  transition: color 0.3s ease-in-out;
+}
+
+.accordion-toggle:where(:hover, :focus, :focus-visible) .accordion-title {
+  color: var(--clr-danger-400);
+}
 
 .accordion-arrow {
   transform-origin: center;
