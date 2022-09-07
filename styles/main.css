@@ -240,13 +240,31 @@ a:where(:hover, :focus, :focus-visible) {
   text-align: center;
 }
 
+.illustration-box {
+  display: none;
+  position: absolute;
+  top: 21vw;
+  left: 12vw;
+  width: 11.938em;
+  height: 11.5em;
+  background-image: url(./../images/illustration-box-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  z-index: 1;
+}
+
 @media (min-width: 64em) {
+  .illustration-box {
+    display: block;
+  }
+
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
     margin-top: 0;
     padding-left: var(--size-600);
     padding-top: var(--size-600);
-    max-width: 57.5em;
+    width: 57.5em;
     min-height: 31.875em;
     overflow: hidden;
     align-items: center;
@@ -255,7 +273,7 @@ a:where(:hover, :focus, :focus-visible) {
   .card-grid::before {
     background-image: url(./../images/bg-pattern-desktop.svg);
     top: -15vw;
-    left: -5em ;
+    left: -5em;
     width: 60.375em;
     height: 59.063em;
   }
