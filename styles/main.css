@@ -20,17 +20,15 @@
 
 /** Root **/
 :root {
-  --clr-primary-100: hsl(0, 0%, 100%);
-  --clr-primary-200: hsl(210, 46%, 95%);
-  --clr-primary-300: hsl(222, 15%, 65%);
-  --clr-primary-400: hsl(217, 19%, 35%);
+  --clr-primary-400: hsl(240, 73%, 65%);
+  --clr-primary-900: hsl(238, 29%, 16%);
 
-  --clr-accent-200: hsl(263, 71%, 75%);
-  --clr-accent-400: hsl(263, 55%, 52%);
+  --clr-accent-400: hsl(273, 75%, 66%);
 
-  --clr-neutral-100: hsl(0, 0%, 100%);
-  --clr-neutral-400: hsl(224, 9%, 68%);
-  --clr-neutral-900: hsl(217, 30%, 14%);
+  --clr-danger-400: hsl(14, 88%, 65%);
+
+  --clr-neutral-400: hsl(240, 6%, 50%);
+  --clr-neutral-900: hsl(237, 12%, 33%);
 
   --clr-grey-100: hsl(0, 0%, 100%);
   --clr-grey-200: hsl(0, 0%, 80%);
@@ -217,29 +215,21 @@ a:where(:hover, :focus, :focus-visible) {
 }
 
 /** Utility - Colours **/
-.text-primary-100 {
-  color: var(--clr-primary-100);
-}
-.text-primary-200 {
-  color: var(--clr-primary-200);
-}
-.text-primary-300 {
-  color: var(--clr-primary-300);
-}
 .text-primary-400 {
   color: var(--clr-primary-400);
 }
-
-.text-accent-200 {
-  color: var(--clr-accent-200);
+.text-primary-900 {
+  color: var(--clr-primary-900);
 }
+
 .text-accent-400 {
   color: var(--clr-accent-400);
 }
 
-.text-neutral-100 {
-  color: var(--clr-neutral-100);
+.text-danger-400 {
+  color: var(--clr-danger-400);
 }
+
 .text-neutral-400 {
   color: var(--clr-neutral-400);
 }
@@ -279,29 +269,21 @@ a:where(:hover, :focus, :focus-visible) {
 }
 
 /** Utility - Background Colours **/
-.bg-primary-100 {
-  background-color: var(--clr-primary-100);
-}
-.bg-primary-200 {
-  background-color: var(--clr-primary-200);
-}
-.bg-primary-300 {
-  background-color: var(--clr-primary-300);
-}
 .bg-primary-400 {
   background-color: var(--clr-primary-400);
 }
-
-.bg-accent-200 {
-  background-color: var(--clr-accent-200);
+.bg-primary-900 {
+  background-color: var(--clr-primary-900);
 }
+
 .bg-accent-400 {
   background-color: var(--clr-accent-400);
 }
 
-.bg-neutral-100 {
-  background-color: var(--clr-neutral-100);
+.bg-danger-400 {
+  background-color: var(--clr-danger-400);
 }
+
 .bg-neutral-400 {
   background-color: var(--clr-neutral-400);
 }
